@@ -193,6 +193,7 @@ default         0;
     sudo ufw allow ssh
     sudo ufw allow http
     sudo ufw allow https
+    sudo ufw allow 3003/tcp
     sudo ufw allow 3333/tcp
     sudo ufw allow 3339/tcp
     sudo ufw allow 3334/tcp
@@ -219,6 +220,7 @@ default         0;
     sudo ufw allow 4433/tcp
     sudo ufw allow 4533/tcp
     sudo ufw allow 4553/tcp
+    sudo ufw allow 4554/tcp
     sudo ufw allow 4633/tcp
     sudo ufw allow 4733/tcp
     sudo ufw allow 4833/tcp
@@ -278,7 +280,7 @@ default         0;
     # Generating Random Password for stratum
     blckntifypass=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
     cd ~
-    git clone https://github.com/tpruvot/yiimp.git
+    git clone https://github.com/neiros/yiimp.git
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     sudo make
